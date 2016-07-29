@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/css/carousel.min.css" rel="stylesheet" />    
+    <link href="~/css/travel-main-mobile.css" rel="stylesheet" />
+    <link href="~/css/star-rating.css" rel="stylesheet" />
+    @* menu *@
+    <link href="~/css/theme-addons.min.css" rel="stylesheet" />
+
+    @Styles.Render("~/css/menucss")
+
+  
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="menu" data-spy="affix" data-offset-top="280">
+            <div class="row">
+                <div class="col-xs-3 hidden-md hidden-lg">
+                    <a href="#menu"></a>
+                </div>
+                <div class="col-xs-9 hidden-md hidden-lg">
+                    <a href="@Url.Action("Index","Home")">
+                        <img src="~/images/icon/logo-star-travel.png" class="img-responsive img-mobile-menu" alt="123" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 hidden-xs hidden-sm">
+                    @Html.Partial("_Mainmenu")
+                </div>
+            </div>
+        </header>
+        <aside class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 hidden-xs hidden-sm">
+                        <a href="@Url.Action("Index","Home")">
+                            <img src="~/images/icon/logo-star-travel.png" class="img-responsive" alt="123" />
+                        </a>
+                        <form>
+                            <div class="col-md-3 dropdown republic">
+                                <a class="cmb-republic" data-toggle="dropdown" href="#">Czech Republic <span class="glyphicon glyphicon-menu-down"></span></a>
+                                <div class="dropdown-menu" role="menu" aria-labelledby="select1">
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 dropdown region-city">
+                                <a class="cmb-republic" data-toggle="dropdown" href="#">Select a Region/City <span class="glyphicon glyphicon-menu-down"></span></a><input class="btn btn-info" type="submit" value="Go" />
+                                <div class="dropdown-menu" role="menu" aria-labelledby="select">
+                                    <div class="col-md-12">
+                                        <ul>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                            <li><a href="#">tour 1</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                              
+                            </div>                            
+                        </form>
+                    </div>                   
+                    <div class="col-md-3">
+                        <h6 class="txt-h6-about">What's so great about Viator <span class="glyphicon glyphicon-arrow-right"></span></h6>
+                        <form class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" required placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="viamod-bar"></div>
+        
+        @RenderSection("slideshow",false)      
+
+
+        <div class="body-content light-shader">
+            @RenderBody()
+        </div>
+        <div class="viamod-bar"></div>
+        @Html.Partial("_Footer")
+    </div>
+    @Html.Partial("_MenuMobile")
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/js/carousel.min.js"></script>
+    <script src="~/js/star-rating.min.js"></script>
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/menujs")
+    <script type="text/javascript">
+    $(function () {
+        $('nav#menu').mmenu({
+            extensions: ['effect-slide-menu', 'pageshadow'],
+            searchfield: true,
+            counters: true,
+            navbar: {
+                title: 'Advanced menu'
+            },
+            navbars: [
+                {
+                    position: 'top',
+                    content: ['searchfield']
+                }, {
+                    position: 'top',
+                    content: [
+                        'prev',
+                        'title',
+                        'close'
+                    ]
+                }, {
+                    position: 'bottom',
+                    content: [
+                        '<a href="http://mmenu.frebsite.nl/wordpress-plugin.html" target="_blank">WordPress plugin</a>'
+                    ]
+                }
+            ]
+        });
+    });
+    </script>
+</body>
+</html>

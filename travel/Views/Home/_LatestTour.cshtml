@@ -1,0 +1,37 @@
+﻿@using travel.ViewModels;
+@using travel.Common;
+
+@model IEnumerable<travel.ViewModels.TourViewModel>
+@foreach (var item in Model)
+{
+    <div class="last-posts__item last-posts__item--with-images">
+        <div class="last-posts__item__container">
+            <a href="#" class="last-posts__item__image-wrap">
+                <img src="~/images/home/packing-1140x760.jpg" class="attachment-thumb_last_posts_shortcode wp-post-image" alt="Packing" />
+                @*@if (item.Anh != null)
+                {
+                    /* <img class="avatar avatar-95 photo" src="@Url.ContentCdn(item.Anh)" alt="@item.AltImg">*/
+                    <img src="data:image;base64,@System.Convert.ToBase64String(item.Anh)" width="80" height="80" />
+                }
+                else
+                {
+                    <img class="avatar avatar-95 photo" src="/images/no-avatar.png" alt="@item.AnhSrc">
+                }*@
+            </a>
+            <div class="last-posts__item__content">
+                <h3 class="last-posts__item__title">
+                    <a href="#">@item.TieuDe</a>
+                </h3>
+                <div class="last-posts__item__description">@Html.Raw(@item.MoTa)</div>
+                <a href="#" class="atbtn atbtn--rounded atbtn--medium atbtn--light">
+                    Read more
+                    <i class="atbtn__icon atbtn__icon--right fa fa-long-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

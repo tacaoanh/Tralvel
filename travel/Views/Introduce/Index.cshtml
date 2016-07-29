@@ -1,0 +1,28 @@
+﻿@using travel.Common;
+@model travel.ViewModels.InformationViewModel
+@{
+    ViewBag.Title = "Giới thiệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-introduce">
+    <div class="header-introduce">
+        <div class="bg-introduce">
+            @*Đình khải*@
+        </div>
+    </div>
+    <div class="container content-introduce">
+        <div class="row">
+            <div class="col-md-12">
+              <h1>@Model.Title</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Raw(Model.Detail)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@Html.Partial("_About", travel.Manager.InformationManager.Instance.InformationGetByCode("introduce"))*@

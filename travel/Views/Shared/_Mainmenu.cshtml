@@ -1,0 +1,47 @@
+﻿@using travel.Common;
+
+<ul class="nav clearfix animated">
+    @*<li>
+        <a href="#"> @provinceName <span class="glyphicon glyphicon-menu-down"></span></a>
+        <div class="container-1 right">
+            <ul>
+                <li class="@(Setting.ProvinceId == 1 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("Hà Nội", "ChonTinh", "Home", new { provinceId = 1 }, new { role = "menuitem" })</li>
+                <li class="@(Setting.ProvinceId == 2 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("Ninh Bình", "ChonTinh", "Home", new { provinceId = 2 }, new { role = "menuitem" })</li>
+                <li class="@(Setting.ProvinceId == 3 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("Nam Định", "ChonTinh", "Home", new { provinceId = 3 }, new { role = "menuitem" })</li>
+
+
+            </ul>
+        </div>
+    </li>*@   
+    <li>
+        <a href="#">
+            <div id="language"></div>
+        </a>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'vi', includedLanguages: 'de,en,fr,id,it,ja,ko,ru,th,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'language');
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        @*<div class="container-1 right">
+            <ul>
+                <li><a href="#">VNĐ()</a></li>
+                <li><a href="#">EUR()</a></li>
+                <li><a href="#">CAD()</a></li>
+                <li><a href="#">NZD()</a></li>
+            </ul>     
+        </div>*@
+    </li>   
+    <li class="right">    
+        <a href="#">Login / Register <span class="glyphicon glyphicon-menu-down"></span></a>
+        <div class="container-2 right">
+            <ul>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Dịch vụ hoàn hảo</a></li>
+                <li><a href="#">Hướng dẫn viên</a></li>
+                <li><a href="#">Đặt tour</a></li>
+            </ul>
+        </div>
+    </li>   
+   
+</ul>

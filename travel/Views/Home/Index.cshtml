@@ -1,0 +1,116 @@
+﻿@using travel.Common;
+@using travel.Manager;
+@{
+    ViewBag.Title = "Travel";
+}
+@section slideshow{
+    <div class="row wow slideInDown">
+    <div class="col-md-12">
+        @{Html.RenderAction("SlideBanner","Home");}        
+    </div>
+</div>
+    }
+<div class="contact-info">
+    <div class="container">
+        <b class="glyphicon glyphicon-star-empty text-color"></b>
+        <ul class="nav nav-pills">          
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle">  About us <b class="caret"></b></a>
+                @{Html.RenderAction("AboutUs", "Home");}
+            </li>
+            <li class="dropdown">
+                <a>Viet Nam  <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Ha Long bay Cruises <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action else here link</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Private tour <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Daily tours <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Cars <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a>Things to do <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    @* Tour đặt nhiều *@
+    <div class="atgrid margin-bottom-large atgrid--small wow slideInDown">
+        <div class="title title--big title--center title--underline title--decoration-bottom-center">
+            @*<div class="title__subtitle">Travel</div>*@
+            <h3 class="title__primary">BIG PROMATION</h3>
+        </div>
+        <div class="row atgrid__row">
+            @Html.Partial("_TourHot",  travel.Manager.TourCategoryManager.Instance.TourCategoryHot())
+        </div>
+    </div>
+</div>
+@* các điểm đến hót trong partial: _Hot.cshtml *@
+ 
+<div class="container">
+    @* khách hàng nói  với chúng  tôi *@
+    <div class="vc_row wpb_row vc_row-fluid section-white padding-top-large padding-bottom">
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 wow slideInDown">
+            <div class="vc_column-inner ">
+                <div class="wpb_wrapper">
+                    <div class="last-posts">
+                        <div class="title title--center title--underline title--decoration-bottom-center">
+                            <h3 class="title__primary">Latest Tour</h3>
+                        </div>
+                        @Html.Partial("_LatestTour", travel.Manager.TourManager.Instance.TourGetLatestTour(1))
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-6 wow slideInDown">
+            <div class="vc_column-inner ">
+                <div class="wpb_wrapper">
+                    <div class="vc_empty_space  visible-sm visible-xs" style="height: 40px"><span class="vc_empty_space_inner"></span></div>
+                    <div class="shortcode-tour-reviews">
+                        <div class="title title--center title--underline title--decoration-bottom-center">
+                            <h3 class="title__primary">REVIEWS</h3>
+                        </div>
+                        @Html.Partial("_TourReview", travel.Manager.TourCategoryManager.Instance.ReviewGetTop(2))
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

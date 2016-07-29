@@ -1,0 +1,173 @@
+﻿@using System.Globalization
+@using travel.Common
+@using travel.Manager
+@model travel.ViewModels.TourDetailViewModel
+@{
+    ViewBag.Title = "Chi tiết tour";
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+    var urlComment = Request.CommentTourUrl(Context, Model.TourId, Model.TieuDe.ToSeoUrl());
+}
+
+<div class="container">
+    <div class="row">
+        @Html.Partial("_DanhMucTour")
+        <div class="col-md-9 tour-right">
+            <div class="row">
+                <div class="col-md-9">
+                    @* slide img *@
+                    <div id="carousel-detail" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-detail" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-detail" data-slide-to="1"></li>
+                            <li data-target="#carousel-detail" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-3.JPG" class="img-responsive" alt="abc" />                               
+                            </div>
+                            <div class="item">                             
+                                <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-7.JPG" class="img-responsive" alt="abc" />                              
+                            </div>
+                            <div class="item">
+                                <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-2-4895.jpg" class="img-responsive" alt="abc" />
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-detail" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-detail" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                    @* tabs chi tiết *@
+                 <div class="detail-content">
+                     <ul class="nav nav-tabs">
+                         <li class="active"><a data-toggle="tab" href="#gegevens">Overview</a></li>
+                         @*<li><a data-toggle="tab" href="#beoordelingen">Beoordelingen</a></li>*@
+                         <li><a data-toggle="tab" href="#fotos">Foto's</a></li>
+                     </ul>
+
+                     <div class="tab-content">
+                         <div id="gegevens" class="tab-pane fade in active text-justify">
+                             @Html.Raw(@Model.NoiDung)
+                             <hr />
+                             <div class="fb-comments" data-href="@urlComment" data-width="100%" data-numposts="5"></div>
+                         </div>
+                         @*<div id="beoordelingen" class="tab-pane fade">
+                             <h3>Comment</h3>
+                             <p>
+                                 <div class="fb-comment-embed" data-href="https://www.facebook.com/zuck/posts/10102577175875681?comment_id=1193531464007751&amp;reply_comment_id=654912701278942" data-include-parent="true"></div>
+                            </p>
+                         </div>*@
+                         <div id="fotos" class="tab-pane fade">
+                             <h3>Tour Images</h3>
+                             <p>
+                                 <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-2-4895.jpg" />
+                                 <br />
+                                 <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-3.JPG" />
+                                 <br />
+                                 <img src="~/images/detail/quan-an-ngon-18-phan-boi-chau-7.JPG" />
+                                 <br />
+                             </p>
+                         </div>
+                     </div>
+                 </div>
+                </div>
+                @* check đặt tour *@
+                <div class="col-xs-12 col-md-3 reviews-left">
+                    <div class="booking_widget_top">
+                        <h3>EUR 28,00</h3>
+                        <hr />
+                        <div>
+                            <span class="glyphicon glyphicon-plane"></span> LAGE PRIJSGARANTIE
+                        </div>
+                    </div>
+                    <div class="form-group">                        
+                        <div class="form-group-filled" id="event_period">
+                            <p>1. Selecteer de reisdatum</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control actual_range" required placeholder="@DateTime.Now">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            </div> 
+                            <p class="text-uppercase">GARANTIE FLEXIBELE DATUM</p> 
+                            <hr />
+                            <p>2. Het totaalaantal reizigers opgeven:</p>  
+                            <div class="row">
+                               <div class="col-md-9 text-left-childen">
+                                   Volwassene (Leeftijd 12 tot 64)
+                               </div>
+                               <div class="col-md-3 text-right-childen">
+                                   <select class="form-group-filled" name="select">
+                                       <option value="1" selected>1</option>
+                                       <option value="1">1</option>
+                                       <option value="1">1</option>
+                                       <option value="1">1</option>
+                                       <option value="1">1</option>
+                                   </select>
+                               </div>     
+                           </div>  
+                            <div class="row">
+                                <div class="col-md-9 text-left-childen">
+                                    Kind (Leeftijd 4 tot 11)
+                                </div>
+                                <div class="col-md-3 text-right-childen">
+                                    <select class="form-group-filled" name="select">
+                                        <option value="1" selected>1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 text-left-childen">
+                                    Baby (Leeftijd 0 tot 3)
+                                </div>
+                                <div class="col-md-3 text-right-childen">
+                                    <select class="form-group-filled" name="select">
+                                        <option value="1" selected>1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 text-left-childen">
+                                    Oudere (Leeftijd 65 tot 99)
+                                </div>
+                                <div class="col-md-3 text-right-childen">
+                                    <select class="form-group-filled" name="select">
+                                        <option value="1" selected>1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                        <option value="1">1</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <hr />
+                           <div class="row">
+                               <div class="col-md-12 text-center">
+                                   <a class="btn btn-danger" href="@Url.Action("BookingTour", "Home")">
+                                       <i class="glyphicon glyphicon-shopping-cart"></i> In wagentje <i class="glyphicon glyphicon-arrow-right"></i>
+                                   </a>
+                                   <div class="text-justify-help">
+                                       U moet een papieren voucher afdrukken en meenemen voor deze activiteit. <a href="#">Wat is dit?</a>
+                                   </div>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

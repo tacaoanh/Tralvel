@@ -1,0 +1,34 @@
+﻿@* các điểm đến hót *@
+<div class="tour-all">
+    <div class="container">
+        <div class="row tour-hot">
+            <div class="col-md-4 tour-destinations  wow slideInLeft">
+                <h2 class="txt-h2">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Top Destinations
+                </h2>
+                <ul class="list-group">
+                    @Html.Partial("_TopDestination", travel.Manager.TourCategoryManager.Instance.TourProvinceGetTop(8))
+                </ul>
+            </div>
+            <div class="col-md-4 tour-destinations  wow slideInDown">
+                <h2 class="txt-h2">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Top Categories
+                </h2>
+                <ul class="list-group">
+                    @Html.Partial("_TopTourCategory", travel.Manager.TourCategoryManager.Instance.TopTourCategory(8))
+                </ul>
+            </div>
+            <div class="col-md-4 tour-attractions  wow slideInRight">
+                <h2 class="txt-h2">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    Top Tour
+                </h2>
+                <ul class="list-group">
+                    @Html.Partial("_TopTour", travel.Manager.TourManager.Instance.TourGetTop(8))
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

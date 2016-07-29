@@ -1,0 +1,28 @@
+﻿
+<div class="col-md-3 tour-left">
+    <div class="tour-left-head">
+        <h3>Top Destinations</h3>
+    </div>
+    <ul class="list-group">
+        @Html.Partial("_DestinationTourProvince", travel.Manager.TourCategoryManager.Instance.TourProvinceGetTop(12))
+    </ul>
+
+    <ul class="list-group">
+        <li class="list-group-item active"><a href="#">Top tour</a></li>
+        @Html.Partial("_TopTourShare", travel.Manager.TourManager.Instance.TourGetTop(12))
+    </ul>
+
+    <ul class="list-group">
+        <li class="list-group-item active"><a href="#">Recommended</a></li>
+        @Html.Partial("_TopTourShare", travel.Manager.TourManager.Instance.TourByCategoryType(2,12))
+    </ul>
+    <br />
+    <div class="tour-left-head">
+        <h3>Questions?</h3>
+        <h3>Need a Hug?</h3>
+        <hr />
+        <p>Call +0(84) 967-535-499</p>
+        <span class="glyphicon glyphicon-phone-alt"></span>
+    </div>
+    <br />
+</div>

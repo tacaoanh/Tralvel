@@ -1,0 +1,32 @@
+﻿@using travel.ViewModels;
+@using travel.Common;
+
+@model IEnumerable<travel.ViewModels.TourCategoryViewModel>
+
+@foreach (var item in Model)
+{
+    TempData["TourHot"] = item.Title;//đang update
+    <div class="col-md-3 col-xs-6 atgrid__item-wrap">
+        <div class="atgrid__item">
+            <div class="atgrid__item__top">
+                <a href="@Url.Action("Index", "Tour", new { name = item.Title.ToSeoUrl(), id = item.CategoryId })" class="atgrid__item__top__image">
+                    @if (item.AnhSrc != null)
+                    {
+                        <img class="img-responsive b-lazy" src="@Url.Content("~/images/blank_600x600.png")" data-src="@Url.Content(item.AnhSrc)" alt="@Html.Raw(item.AltImg)">
+                    }
+                    else
+                    {
+                        <img class="img-responsive b-lazy" src="@Url.Content("~/images/blank_600x600.png")" data-src="@Url.Content("~/images/image-item_default.png")" alt="@Html.Raw(item.AltImg)">
+                    }   
+                </a>
+                <div class="atgrid__item__angle-wrap">
+                    <div class="atgrid__item__angle" style="background-color:#eb4293">@item.TourCount Tour</div>
+                </div>        
+            </div>
+            <div class="atgrid__item__content">
+                <h3 class="atgrid__item__title"><a href="@Url.Action("Index", "Tour", new { name = item.Title.ToSeoUrl(), id = item.CategoryId })">@item.Title</a></h3>
+                <div class="atgrid__item__description text-justify">@Html.Raw(item.Description)</div>
+            </div>
+        </div>
+    </div>
+}

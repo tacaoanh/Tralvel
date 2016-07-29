@@ -1,0 +1,37 @@
+﻿@using travel.ViewModels;
+@using travel.Common;
+
+@model IEnumerable<travel.ViewModels.ReviewViewModel>
+@foreach (var item in Model)
+{
+    <div class="shortcode-tour-reviews__item">
+        <div class="shortcode-tour-reviews__item__info">
+            @if (item.AnhNguoiDungSrc != null)
+            {
+                /*<img class="avatar avatar-95 photo" src="@Url.ContentCdn(item.AnhNguoiDungSrc)" alt="@item.AltImg">*/
+                <img class="avatar avatar-95 photo img-avata" src="/images/no-avatar.png" alt="@item.AltImg">
+            }
+            else
+            {
+                <img class="avatar avatar-95 photo" src="/images/no-avatar.png" alt="@item.AltImg">
+            }
+            
+            <div class="shortcode-tour-reviews__item__info__name">@item.TenNguoiDung</div>
+        </div>
+        <div class="shortcode-tour-reviews__item__content">
+            <h3 class="shortcode-tour-reviews__item__title">
+                <a href="#">@item.Title</a>
+            </h3>
+            <div class="shortcode-tour-reviews__item__description">
+                <p>@item.Content</p>
+            </div>
+           
+            <div class="shortcode-tour-reviews__item__rating">
+                <div class="danhgia-ct shadow-outside" property="aggregateRating" typeof="AggregateRating">
+                    <input class="rating form-control hide" value="4" data-min="0" data-max="5" data-step="0.1" data-display-only="true">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+}

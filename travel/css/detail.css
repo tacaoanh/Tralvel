@@ -1,0 +1,84 @@
+﻿body {
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+.tour-left,.tour-right{
+    margin-top:20px;
+}
+.tour-right .nav-tabs{
+    margin-top:20px;
+    background:#FFF;
+}
+.detail-content{
+    background:#FFF;
+}
+.detail-content .tab-content{
+    padding:0px 10px 25px 10px;
+    margin-bottom:20px;
+}
+.detail-content .tab-content img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reviews-left{
+    position:relative;
+    background:#FFF;
+    padding:0px 0px!important;
+}
+.reviews-left .booking_widget_top h3{margin:0px;text-shadow: 0 0.04em 0.04em #555;text-align:center;color:#FFF; padding: 15px 0px;}
+.reviews-left .booking_widget_top {  
+    background:#FB9B08;
+    min-height:120px;
+}
+.booking_widget_top hr{width:80%;border-top:2px solid#FFF;margin:0 auto;float:none;display:block;}
+.booking_widget_top div{
+    color:#FFF;
+    font-size:16px;
+    text-align:center;
+    padding:10px 0px;
+    font-weight:bold;
+}
+.reviews-left .form-group{
+    padding:20px 15px 0px 15px;
+
+}
+.reviews-left .form-group p{
+    font-weight:bold;
+}
+.reviews-left .form-group .text-uppercase{
+    font-size:13px;
+    color:#089fc1;
+    padding:10px 0px;
+    font-weight:normal;
+}
+.reviews-left .form-group .form-group-filled{
+    padding:4px 5px;
+    border-radius:3px;
+
+}
+.text-left-childen{
+    padding-right:0px!important;
+}
+.text-right-childen{
+    padding-left:0px!important;
+}
+.reviews-left .form-group .row{
+    padding:10px 0px;
+}
+.text-justify-help{
+    text-align:justify;
+    font-size:12px;
+    line-height:18px;
+    padding:15px 0px;
+}
+@media all and (max-width:600px){
+    .reviews-left{
+        padding:0px 15px!important;
+    }
+}

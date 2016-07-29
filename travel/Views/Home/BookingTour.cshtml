@@ -1,0 +1,739 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="header-section header-section--with-banner parallax-section parallax-section--header">
+    <div class="parallax-image"></div>
+    <div class="container">
+        <div class="breadcrumbs">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tours</a></li>
+                <li>Canadian Rockies</li>
+            </ul>
+        </div>
+        <div class="header-section__content">
+            <h1 class="header-section__title">Canadian Rockies</h1>
+            <div class="header-section__rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>(2 reviews)
+            </div>
+        </div>
+    </div>
+</div>
+@* --- *@
+<div class="container layout-container margin-top margin-bottom">
+    <div class="row tour-single-rise">
+        <div class="col-md-9" role="main" itemscope="" itemtype="#">
+            <div class="tours-tabs">
+                <ul class="nav nav-tabs hidden-xs">
+                    <li class="active"><a href="#tabdescription" data-toggle="tab" aria-expanded="true">Details</a></li>
+                    <li class=""><a href="#tabatab0" data-toggle="tab" aria-expanded="false">Itinerary</a></li>
+                    <li><a href="#tabatab1" data-toggle="tab">Location</a></li>
+                    <li><a href="#tabphotos" data-toggle="tab">Photos</a></li>
+                    <li class="visible-xs booking-form-scroller"><a href="#tabbooking_form" data-toggle="tab">Book the tour</a></li>
+                </ul>
+            <div class="panel-group visible-xs tabs-accordion" id="SohjZ-accordion"></div>
+                <div class="tab-content hidden-xs">
+                    <div class="tab-pane active in" id="tabdescription">
+                        <div class="tours-tabs__info">
+                            <div class="tours-tabs__info__item">
+                                <div class="tours-tabs__info__item__content">
+                                    <div class="tours-tabs__info__item__icon"><i class="td-clock-2"></i></div>
+                                    <div class="tours-tabs__info__item__title">6 days</div>
+                                    <div class="tours-tabs__info__item__description">Duration</div>
+                                </div>
+                            </div><div class="tours-tabs__info__item">
+                                <div class="tours-tabs__info__item__content">
+                                    <div class="tours-tabs__info__item__icon"><i class="td-barbell"></i></div>
+                                    <div class="tours-tabs__info__item__title">8/10</div>
+                                    <div class="tours-tabs__info__item__description">Physicality</div>
+                                </div>
+                            </div><div class="tours-tabs__info__item">
+                                <div class="tours-tabs__info__item__content">
+                                    <div class="tours-tabs__info__item__icon"><i class="td-globe"></i></div>
+                                    <div class="tours-tabs__info__item__title">Alberta, Canada</div>
+                                    <div class="tours-tabs__info__item__description">Location</div>
+                                </div>
+                            </div><div class="tours-tabs__info__item">
+                                <div class="tours-tabs__info__item__content">
+                                    <div class="tours-tabs__info__item__icon"><i class="td-user"></i></div>
+                                    <div class="tours-tabs__info__item__title">12+</div>
+                                    <div class="tours-tabs__info__item__description">Age</div>
+                                </div>
+                            </div><div class="tours-tabs__info__item">
+                                <div class="tours-tabs__info__item__content">
+                                    <div class="tours-tabs__info__item__icon"><i class="td-calendar-2"></i></div>
+                                    <div class="tours-tabs__info__item__title">Jun-Oct</div>
+                                    <div class="tours-tabs__info__item__description">Dates</div>
+                                </div>
+                            </div>
+                        </div>			
+                        <div class="tours-tabs__content padding-all">
+                            <ul class="list-block list-block--tour-tabs">
+                                <li>
+                                  <a href="#">Accommodations</a>
+                                </li>
+                                <li>
+                                    <a href="#">Airfare included</a>
+                                </li>
+                                <li>
+                                    <a href="#">Canada</a>
+                                </li>
+                                <li>
+                                     <a href="#">Deals and Discounts</a>
+                                </li>
+                                <li>
+                                     <a href="#">Hiking</a>
+                                </li>
+                        </ul>
+                            @* thông tin đặt tour *@
+                            @using (Html.BeginForm("", "", FormMethod.Post))
+                            {
+                                <div class="row">
+                                    <div class="col-md-4">FistName:</div>
+                                    <div class="col-md-8"><input type="text" class="form-control" placeholder="FistName" required></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">LastName:</div>
+                                    <div class="col-md-8"><input type="text" class="form-control" placeholder="LastName" required></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Tel:</div>
+                                    <div class="col-md-8"><input type="tel" class="form-control" placeholder="tel" required></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Email:</div>
+                                    <div class="col-md-8"><input type="email" class="form-control" placeholder="email" required></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">Quốc gia:</div>
+                                    <div class="col-md-8">
+                                        <select class="form-control">
+                                            <option value="+84" selected>+84</option>
+                                            <option value="+84">+84</option>
+                                            <option value="+84">+84</option>
+                                            <option value="+84">+84</option>
+                                            <option value="+84">+84</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">Yêu Cầu đặc biệt:</div>
+                                    <div class="col-md-8"><textarea type="text" class="form-control" placeholder="Yêu Cầu đặc biệt" required> </textarea></div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">Ngày bắt đầu:</div>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control actual_range" required placeholder="@DateTime.Now">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">Ngày  kết thúc:</div>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control actual_range" required placeholder="@DateTime.Now">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                        </div> 
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">số người lớn:</div>
+                                    <div class="col-md-8">
+                                        <select class="form-control">
+                                            <option value="1" selected>1 Adults</option>
+                                            @for (int i = 2; i < 200; i++)
+                                            {
+                                                <option value="@i">@i Adults</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">Số trẻ nhỏ:</div>
+                                    <div class="col-md-8">
+                                        <select class="form-control">
+                                            <option value="1" selected>1 children</option>
+                                            @for (int i = 2; i < 200; i++)
+                                            {
+                                                <option value="@i">@i children</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">Theo Đoàn(.../person):</div>
+                                    <div class="col-md-8">
+                                        <select class="form-control">
+                                            <option value="1" selected>1 person</option>
+                                            @for (int i = 2; i < 200; i++)
+                                            {
+                                                <option value="@i">@i person</option>
+                                            }                                          
+                                        </select>
+                                    </div>
+                               </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <input type="submit" value="Book now" class="btn btn-danger right">
+                                    </div>
+                                </div>
+                            }
+                       
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabatab0">
+                        <div class="tours-tabs__content padding-all">
+                            <div class="timeline">
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">1</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 1: Departure</h3>		
+                                        <div class="timeline__item__description">
+                                            Ornare proin neque tempus cubilia cubilia blandit netus.
+                                            <ul>
+                                                <li>Maecenas massa. Fermentum. Pretium vitae tempus sem enim enim.</li>
+                                                <li>Tempus, leo, taciti augue aliquam hendrerit.</li>
+                                                <li>Accumsan pharetra eros justo augue posuere felis elit cras montes fames.</li>
+                                                <li>Vulputate dictumst egestas etiam dictum varius.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">2</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 2</h3>		
+                                        <div class="timeline__item__description">Tortor elementum egestas metus potenti habitasse tempus natoque senectus commodo rutrum quisque fermentum. Nisi velit primis dapibus odio consequat facilisi sollicitudin porta nulla tellus sagittis platea tempor sed parturient convallis consectetuer Vulputate curae; pharetra.</div>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">3</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 3</h3>		
+                                        <div class="timeline__item__description">Fusce sagittis viverra lorem proin porttitor conubia risus vivamus. Mollis. Luctus curabitur porta nibh penatibus aliquet nec conubia magnis semper, sem feugiat scelerisque molestie. Nibh proin dapibus phasellus lacus. Facilisi.</div>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">4</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 4</h3>		
+                                        <div class="timeline__item__description">Pretium consequat, facilisis sem in malesuada sodales et ipsum proin eleifend tincidunt, urna morbi metus quisque. Lacinia habitasse ridiculus sapien platea a cursus hendrerit tempor facilisi orci at tempor, senectus.</div>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">5</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 5</h3>		
+                                        <div class="timeline__item__description">Pellentesque diam pede, eros lobortis habitant sed malesuada facilisi odio morbi tempus ante. Dui cras molestie feugiat sagittis primis senectus eros mollis venenatis, bibendum. Egestas maecenas hac nullam integer at.</div>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <div class="timeline__item__icon-wrap">
+                                        <div class="timeline__item__icon">
+                                            <div class="timeline__item__icon__text">6</div>
+                                        </div>
+                                    </div>
+                                    <div class="timeline__item__content padding-left">
+                                        <h3 class="timeline__item__title">Day 6: Return</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabatab1">
+                        <div class="tours-tabs__content padding-all">                            
+                                gmaps
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tabphotos">
+                        <div class="tours-tabs__content padding-all">
+                            <div class="row product-thumbnails"><div class="col-md-12">
+                                <a href="#" class="swipebox" title="Canadian Rockies">
+                                    <img src="~/images/tour/lake-moraine.jpg" class="attachment-full wp-post-image" alt="Lake Moraine" />
+                                </a>
+                                </div>
+                            </div>
+                            <div class="row product-thumbnails columns-3">
+                            <div class="col-sm-3 col-xs-4 product-thumbnails__item">
+                                <a href="#" class="swipebox first" title="Passenger train in Canadian Rockies">
+                                    <img src="~/images/tour/canadian-rockies-train-180x120.jpg" class="attachment-shop_thumbnail" alt="Train" />
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-4 product-thumbnails__item">
+                                <a href="#" class="swipebox first" title="Passenger train in Canadian Rockies">
+                                    <img src="~/images/tour/canadian-rockies-train-180x120.jpg" class="attachment-shop_thumbnail" alt="Train" />
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-4 product-thumbnails__item">
+                                <a href="#" class="swipebox first" title="Passenger train in Canadian Rockies">
+                                    <img src="~/images/tour/canadian-rockies-train-180x120.jpg" class="attachment-shop_thumbnail" alt="Train" />
+                                </a>
+                            </div>
+                            <div class="col-sm-3 col-xs-4 product-thumbnails__item">
+                                <a href="#" class="swipebox first" title="Passenger train in Canadian Rockies">
+                                    <img src="~/images/tour/canadian-rockies-train-180x120.jpg" class="attachment-shop_thumbnail" alt="Train" />
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div><!-- .tab-content -->
+            </div><!-- .tour-tabs -->         		
+
+            <div id="comments" class="tour-reviews margin-top">
+                <div class="section-title title title--small title--center title--decoration-bottom-center title--underline">
+                    <h3 class="title__primary">Tour Reviews</h3>
+                </div>
+                <div class="margin-left margin-right padding-top padding-bottom tour-reviews__rating-total">
+                    <div class="tour-reviews__rating-total__stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        </div>
+                    <div class="tour-reviews__rating-total__text">5 based on 2 reviews</div>
+                </div>	
+                <div class="tour-reviews__items">
+                    <div id="comment-24" class="tour-reviews__item margin-left margin-right padding-top padding-bottom">                        
+                        <div class="tour-reviews__item__container">
+                            <div class="tour-reviews__item__info">
+                                <img alt="aaa" src="~/images/khachhang/avatar.jpeg" class="avatar avatar-122 photo" height="122" width="122">			
+                                <div class="tour-reviews__item__name"><span>Jessica</span></div>
+                            </div>
+                            <div class="tour-reviews__item__content">
+                                <div class="tour-reviews__item__content__top">
+                                    <div class="tour-reviews__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>	                                     
+                                    <div class="tour-reviews__item__date">August 21, 2015</div>
+                                </div>
+                                <div class="tour-reviews__item__text">
+                                    <p>The sightseeing and activities were better than we even thought! I still can’t believe we did so much in such a short time, but we did not feel stressed. We really loved the tour and would do it all over again in a minute! Thanks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- #comment-## -->
+
+                    <div id="comment-22" class="tour-reviews__item margin-left margin-right padding-top padding-bottom">
+                        <div class="tour-reviews__item__container">
+                            <div class="tour-reviews__item__info">
+                                <img alt="aaa" src="~/images/khachhang/avatar.jpeg" class="avatar avatar-122 photo" height="122" width="122">
+                                <div class="tour-reviews__item__name"><span>Jessica</span></div>
+                            </div>
+                            <div class="tour-reviews__item__content">
+                                <div class="tour-reviews__item__content__top">
+                                    <div class="tour-reviews__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <div class="tour-reviews__item__date">August 21, 2015</div>
+                                </div>
+                                <div class="tour-reviews__item__text" itemprop="reviewBody">
+                                    <p>The sightseeing and activities were better than we even thought! I still can’t believe we did so much in such a short time, but we did not feel stressed. We really loved the tour and would do it all over again in a minute! Thanks.</p>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div><!-- #comment-## -->
+                </div>
+
+                <div id="tour-leave-review" class="tour-reviews__form padding-all">
+                    <h3 class="tour-reviews__form__title">Leave a Review</h3>
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">Cancel reply</a></small></h3>
+                        <form action="#" method="post" id="commentform" class="comment-form">
+                            <div class="tour-reviews__form__item">
+                            <input id="author" name="author" type="text" placeholder="Name" value="" size="30" class="form-validation-item"></div>
+                            <div class="tour-reviews__form__item">
+                            <input id="email" name="email" type="text" placeholder="Email" value="" size="30" class="form-validation-item"></div>
+                            <div class="tour-reviews__form__rating">                            
+                                <select name="rating" id="rating" style="display: none;">
+                                    <option value="">Rate…</option><option value="5">Perfect</option>
+                                    <option value="4">Good</option><option value="3">Average</option>
+                                    <option value="2">Not that bad</option><option value="1">Very Poor</option>
+                                    </select></div><div class="tour-reviews__form__item">
+                                <textarea id="comment" name="comment" placeholder="Your Review" class="form-validation-item"></textarea>
+                            </div>
+                            <p class="form-submit">
+                                <input name="submit" type="submit" id="submit" class="atbtn" value="Submit"> 
+                                <input type="hidden" name="comment_post_ID" value="124" id="comment_post_ID">
+                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                            </p>
+                        </form>
+                    </div><!-- #respond -->
+                </div>
+            </div>
+
+            <div class="related-tours padding-top">
+                <h2 style="margin:0 0 25px 0">You May Also Like</h2>
+
+                <div class="atgrid atgrid--small">
+                    <div class="row atgrid__row">
+                        <div class="col-md-4 col-xs-6 atgrid__item-wrap">
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#" class="atgrid__item__top__image">
+                                        <img src="~/images/tour/hot-air-balloons-360x240.jpg" class="attachment-thumb_tour_listing_small wp-post-image" alt="Hot Air Balloon" />
+                                    </a>											
+                                    <div class="atgrid__item__angle-wrap">
+                                    <div class="atgrid__item__angle" style="background-color:#eb4293">Special Offer</div>
+                                    </div>						
+                                    <div class="atgrid__item__price">
+                                    <a href="#" class="atgrid__item__price__button">
+                                        <del>
+                                        <span class="amount">$148</span>–<span class="amount">$299</span>
+                                        </del> 
+                                        <ins><span class="amount">$148</span>–<span class="amount">$249</span>
+                                        </ins>
+                                        </a></div>										
+                                    <div class="atgrid__item__rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="atgrid__item__content">
+                                    <h3 class="atgrid__item__title">
+                                    <a href="#">Hot Air Ballooning</a></h3>
+                                    <div class="atgrid__item__description">Cras primis nonummy lorem cum cubilia morbi</div>
+                                </div>
+                                <div class="item-attributes">
+                                    <div class="item-attributes__item"><div class="item-attributes__item__content">
+                                        <div class="item-attributes__item__content__item">
+                                        <i class="td-clock-2"></i>
+                                        </div>
+                                        <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                        <span>8 hours</span>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-attributes__item">
+                                    <div class="item-attributes__item__content">
+                                        <div class="item-attributes__item__content__item">
+                                        <i class="td-barbell"></i>
+                                        </div>
+                                        <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                        <span>4/10</span>
+                                        </div>
+                                    </div>
+                                    </div>					
+                                    <div class="item-attributes__item">
+                                    <a href="#" class="item-attributes__link">
+                                        <i class="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-6 atgrid__item-wrap">
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#" class="atgrid__item__top__image">
+                                        <img src="~/images/tour/hot-air-balloons-360x240.jpg" class="attachment-thumb_tour_listing_small wp-post-image" alt="Hot Air Balloon" />
+                                    </a>
+                                    <div class="atgrid__item__angle-wrap">
+                                        <div class="atgrid__item__angle" style="background-color:#eb4293">Special Offer</div>
+                                    </div>
+                                    <div class="atgrid__item__price">
+                                        <a href="#" class="atgrid__item__price__button">
+                                            <del>
+                                                <span class="amount">$148</span>–<span class="amount">$299</span>
+                                            </del>
+                                            <ins>
+                                                <span class="amount">$148</span>–<span class="amount">$249</span>
+                                            </ins>
+                                        </a>
+                                    </div>
+                                    <div class="atgrid__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="atgrid__item__content">
+                                    <h3 class="atgrid__item__title">
+                                        <a href="#">Hot Air Ballooning</a>
+                                    </h3>
+                                    <div class="atgrid__item__description">Cras primis nonummy lorem cum cubilia morbi</div>
+                                </div>
+                                <div class="item-attributes">
+                                    <div class="item-attributes__item">
+                                        <div class="item-attributes__item__content">
+                                            <div class="item-attributes__item__content__item">
+                                                <i class="td-clock-2"></i>
+                                            </div>
+                                            <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                                <span>8 hours</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-attributes__item">
+                                        <div class="item-attributes__item__content">
+                                            <div class="item-attributes__item__content__item">
+                                                <i class="td-barbell"></i>
+                                            </div>
+                                            <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                                <span>4/10</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-attributes__item">
+                                        <a href="#" class="item-attributes__link">
+                                            <i class="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="atgrid__row-separator clearfix visible-sm visible-xs"></div>		
+                        <div class="col-md-4 col-xs-6 atgrid__item-wrap">
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#" class="atgrid__item__top__image">
+                                        <img src="~/images/tour/hot-air-balloons-360x240.jpg" class="attachment-thumb_tour_listing_small wp-post-image" alt="Hot Air Balloon" />
+                                    </a>
+                                    <div class="atgrid__item__angle-wrap">
+                                        <div class="atgrid__item__angle" style="background-color:#eb4293">Special Offer</div>
+                                    </div>
+                                    <div class="atgrid__item__price">
+                                        <a href="#" class="atgrid__item__price__button">
+                                            <del>
+                                                <span class="amount">$148</span>–<span class="amount">$299</span>
+                                            </del>
+                                            <ins>
+                                                <span class="amount">$148</span>–<span class="amount">$249</span>
+                                            </ins>
+                                        </a>
+                                    </div>
+                                    <div class="atgrid__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="atgrid__item__content">
+                                    <h3 class="atgrid__item__title">
+                                        <a href="#">Hot Air Ballooning</a>
+                                    </h3>
+                                    <div class="atgrid__item__description">Cras primis nonummy lorem cum cubilia morbi</div>
+                                </div>
+                                <div class="item-attributes">
+                                    <div class="item-attributes__item">
+                                        <div class="item-attributes__item__content">
+                                            <div class="item-attributes__item__content__item">
+                                                <i class="td-clock-2"></i>
+                                            </div>
+                                            <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                                <span>8 hours</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-attributes__item">
+                                        <div class="item-attributes__item__content">
+                                            <div class="item-attributes__item__content__item">
+                                                <i class="td-barbell"></i>
+                                            </div>
+                                            <div class="item-attributes__item__content__item item-attributes__item__content__item--text">
+                                                <span>4/10</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-attributes__item">
+                                        <a href="#" class="item-attributes__link">
+                                            <i class="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="col-md-3 sidebar" role="complementary">
+            <div class="price-decoration block-after-indent">
+            <div class="price-decoration__value">
+                <i class="td-price-tag"></i>
+                <del>
+                <span class="amount">$2,225</span>
+                </del> 
+                <ins>
+                <span class="amount">$1,925</span>
+                </ins>
+            </div>
+            <div class="price-decoration__label">One tour per person</div>
+            <div class="">
+                <div class="price-decoration__label-round" style="background-color:#eb4293">
+                <span>Last Minute</span>
+                </div>
+                </div>
+            </div>  
+            <div class="notices-box notices-box--error block-after-indent">
+                <h2>Tour nổi  bật trong tháng (8)</h2>
+            </div>
+            <div class="block-after-indent widget-atgrid-without-title">
+                <div id="tours_adventure_tours-4" class="widget block-after-indent widget_tours_adventure_tours">
+                    <div class="atgrid--widget">
+                        <div class="atgrid atgrid--small">
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#">
+                                        <img src="~/images/TinTuc/costa-rica-270x180.jpg" class="attachment-thumb_tour_widget wp-post-image" alt="Costa Rica Waterfall" />                                    
+                                    </a>                                   
+                                    <div class="atgrid__item__angle-wrap">
+                                    <div class="atgrid__item__angle" style="background-color:#01cb68">Early Bird</div></div>				
+                                    <div class="atgrid__item__price">
+                                    <a href="#" class="atgrid__item__price__button"><del>
+                                        <span class="amount">$2,500</span>
+                                        </del> 
+                                        <ins>
+                                        <span class="amount">$2,200</span>
+                                        </ins>
+                                        </a>
+                                    </div>				
+                                    <div class="atgrid__item__rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    </div>					
+                                    <h4 class="atgrid__item__top__title">
+                                    <a href="#">Discover Costa Rica</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#">
+                                        <img src="~/images/TinTuc/costa-rica-270x180.jpg" class="attachment-thumb_tour_widget wp-post-image" alt="Costa Rica Waterfall" />
+                                    </a>
+                                    <div class="atgrid__item__angle-wrap">
+                                        <div class="atgrid__item__angle" style="background-color:#01cb68">Early Bird</div>
+                                    </div>
+                                    <div class="atgrid__item__price">
+                                        <a href="#" class="atgrid__item__price__button">
+                                            <del>
+                                                <span class="amount">$2,500</span>
+                                            </del>
+                                            <ins>
+                                                <span class="amount">$2,200</span>
+                                            </ins>
+                                        </a>
+                                    </div>
+                                    <div class="atgrid__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4 class="atgrid__item__top__title">
+                                        <a href="#">Discover Costa Rica</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="atgrid__item">
+                                <div class="atgrid__item__top">
+                                    <a href="#">
+                                        <img src="~/images/TinTuc/costa-rica-270x180.jpg" class="attachment-thumb_tour_widget wp-post-image" alt="Costa Rica Waterfall" />
+                                    </a>
+                                    <div class="atgrid__item__angle-wrap">
+                                        <div class="atgrid__item__angle" style="background-color:#01cb68">Early Bird</div>
+                                    </div>
+                                    <div class="atgrid__item__price">
+                                        <a href="#" class="atgrid__item__price__button">
+                                            <del>
+                                                <span class="amount">$2,500</span>
+                                            </del>
+                                            <ins>
+                                                <span class="amount">$2,200</span>
+                                            </ins>
+                                        </a>
+                                    </div>
+                                    <div class="atgrid__item__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <h4 class="atgrid__item__top__title">
+                                        <a href="#">Discover Costa Rica</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div><!-- .atgrid -->
+                    </div><!-- .atgrid widget -->
+                </div>
+            </div>
+            <div id="yikes_easy_mc_widget-2" class="widget block-after-indent widget_yikes_easy_mc_widget">
+                <h3 class="widget__title">Send Mail</h3>
+                <section id="yikes-mailchimp-container-1" class="yikes-mailchimp-container yikes-mailchimp-container-1 ">
+                    <form id="adventure-tours-1" class="yikes-easy-mc-form yikes-easy-mc-form-1  " action="" method="POST">
+                        <label for="EMAIL" class="EMAIL-label yikes-mailchimp-field-required">                          
+                            <span class="EMAIL-label">
+                                Email Address
+                            </span>
+                            <input id="yikes-easy-mc-form-1-EMAIL" name="EMAIL" placeholder="Your Email" class="yikes-easy-mc-email " required="required" type="email" value="">                          
+                        </label>                        
+                        <input type="hidden" name="yikes-mailchimp-honeypot" id="yikes-mailchimp-honeypot" value="">                     
+                        <input type="hidden" name="yikes-mailchimp-associated-list-id" id="yikes-mailchimp-associated-list-id">                       
+                        <input type="hidden" name="yikes-mailchimp-submitted-form" id="yikes-mailchimp-submitted-form">                    
+                        <button type="submit" class="yikes-easy-mc-submit-button yikes-easy-mc-submit-button-1 btn btn-primary ">Submit</button>                     
+                        <input type="hidden" id="yikes_easy_mc_new_subscriber" name="yikes_easy_mc_new_subscriber">
+                        <input type="hidden" name="_wp_http_referer" >
+                    </form>      
+                </section>
+            </div>
+        </aside>
+    </div>
+</div>

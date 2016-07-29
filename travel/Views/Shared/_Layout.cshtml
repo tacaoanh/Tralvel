@@ -1,0 +1,171 @@
+﻿@using travel.Common;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:pages" content="1746489822302762" />
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/css/carousel.min.css" rel="stylesheet" />    
+    <link href="@Html.CdnUrl("~/css/travel-main-mobile.css")" rel="stylesheet" />
+    <link href="@Html.CdnUrl("~/css/star-rating.css")" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    @* menu *@
+    <link href="~/css/theme-addons.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/css/menucss")
+    <link href="~/css/carousel.min.css" rel="stylesheet" />
+
+</head>
+<body style="overflow-x:hidden; clear:both;">
+    <div class="container-fluid">
+        <header class="menu" data-spy="affix" data-offset-top="280">
+            <div class="row">
+                <div class="col-xs-3 hidden-md hidden-lg">
+                    <a href="#menu"></a>
+                </div>
+                <div class="col-xs-9 hidden-md hidden-lg">
+                    <a href="@Url.Action("Index","Home")">
+                        <img src="~/images/icon/logo-star-travel.png" class="img-responsive img-mobile-menu" alt="123" />
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 hidden-xs hidden-sm">
+                    @Html.Partial("_Mainmenu")
+                </div>
+                   
+            </div>
+        </header>
+        <aside class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 hidden-xs hidden-sm">
+                        <a href="@Url.Action("Index","Home")">
+                            <img src="~/images/icon/logo-star-travel.png" class="img-responsive" alt="123" />
+                        </a>
+                    </div>
+                    <div class="col-md-6">                         
+                        @Html.Partial("_SearchProvince")                      
+                    </div>
+                    <div class="col-md-3">
+                        <ul>
+                            <li>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone"> </span> Hotline: (+84) 967.53.54.99
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="glyphicon glyphicon-envelope"> </span> Email: sales@cozitravel.com
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="glyphicon glyphicon-phone-alt"> </span> tel: 043 8989 989
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <div class="viamod-bar"></div>
+        
+        @RenderSection("slideshow", false)      
+
+
+        <div class="body-content">
+            @RenderBody()
+        </div>
+        <div class="viamod-bar"></div>
+        @Html.Partial("_Footer")
+    </div>
+    @Html.Partial("_MenuMobile")
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/js/carousel.min.js"></script>
+    <script src="~/js/star-rating.min.js"></script>
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/menujs")
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+    <script src="~/js/blazy.min.js"></script>
+
+    <script type="text/javascript">
+        $('#event_period').datepicker({
+            inputs: $('.actual_range')
+        });
+        $('.glyphicon-time').datepicker({
+            inputs: $('.actual_range')
+        });
+
+        var bLazy = new Blazy({
+            breakpoints: [{
+                width: 420 // Max-width
+              , src: 'data-src-small'
+            }]
+       , success: function (element) {
+           setTimeout(function () {
+               // We want to remove the loader gif now.
+               // First we find the parent container
+               // then we remove the "loading" class which holds the loader image
+               var parent = element.parentNode;
+               parent.className = parent.className.replace(/\bloading\b/, '');
+           }, 200);
+       }
+        });
+
+    </script>
+    <script type="text/javascript">
+    $(function () {
+        $('nav#menu').mmenu({
+            extensions: ['effect-slide-menu', 'pageshadow'],
+            searchfield: true,
+            counters: true,
+            navbar: {
+                title: 'Advanced menu'
+            },
+            navbars: [
+                {
+                    position: 'top',
+                    content: ['searchfield']
+                }, {
+                    position: 'top',
+                    content: [
+                        'prev',
+                        'title',
+                        'close'
+                    ]
+                }, {
+                    position: 'bottom',
+                    content: [
+                        '<a href="www.techsoftplus.com" target="_blank">Tạ Cao Anh</a>'
+                    ]
+                }
+            ]
+        });
+    });
+    </script>
+    @* banner slide *@
+    <script>
+    $(document).ready(function () {
+        $("#travel-slidebar").owlCarousel({
+            navigation: true,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            lazyLoad: true,
+            autoPlay: 3000        
+
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿
+@using PagedList.Mvc
+@using travel.ViewModels;
+@using travel.Common;
+@using travel.Manager;
+@model PagedList.IPagedList<travel.ViewModels.TourListViewModel>
+
+@{
+    ViewBag.Title = "Các tour tìm  kiếm";
+    Layout = "~/Views/Shared/_LayoutTour.cshtml";
+    var tinh = ProvinceManager.Instance.GetTinh(Setting.ProvinceId);
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <ul class="breadcrumb">
+                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li><a href="@Url.Action("Index","Tour")">Danh sách tour</a></li>
+                <li><i class="text-danger">@(ViewBag.searchText == "" ? "tất cả" : " '" + ViewBag.searchText + "'") &emsp;</i><span class="badge">@ViewBag.CountTour</span></li>             
+            </ul>
+        </div>
+        <div class="col-md-3 text-right">
+            <ul class="breadcrumb">
+                <li class="right"><b class="text-info">@(Setting.ProvinceId == 0 ? "" : "Khu vực: " + Setting.ProvinceName) </b></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Partial("_DanhMucTour")
+        <div class="col-md-9 tour-right">
+            <div class="row item-all">
+                <div class="col-md-12">
+                    <div class="tour-gioi-thieu">
+                        @tinh.Description
+                    </div>
+                </div>
+            </div>
+            <div class="txt-div">
+                <br />
+                <span class="glyphicon glyphicon-bookmark txt-tickets"></span><span class="txt-tickets">Tours</span>
+                <br /><br />
+            </div>
+            @foreach (var item in Model)
+            {
+                @Html.Partial("_TourListItem", item)
+            }
+
+            <div class="col-md-12 text-center">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row bg-mail wow slideInDown">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3> Deals & Discounts</h3>
+                <span>Subscribe to our email newsletter</span>
+            </div>
+            <div class="col-md-9">
+                <form class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" required placeholder="Email..">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button">SING UP &rarr;</button>
+                        </span>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

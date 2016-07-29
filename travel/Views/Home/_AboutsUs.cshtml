@@ -1,0 +1,15 @@
+﻿@using travel.Common;
+@model IEnumerable<travel.ViewModels.InformationViewModel>
+
+<ul class="dropdown-menu">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <li>
+               <a href="@Url.Action("Index", "Introduce", new { id = item.Id, name = item.Title.ToSeoUrl() })">@item.Title</a>
+            </li>
+        }
+    }  
+    
+</ul>

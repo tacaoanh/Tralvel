@@ -1,0 +1,35 @@
+﻿@using travel.ViewModels;
+@using travel.Common;
+
+@model travel.ViewModels.TourListViewModel
+
+<div class="row item-all">
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "Detail", new { tourName = @Model.TieuDe.ToSeoUrl(), tourId = @Model.TourId })">
+            <img src="~/images/tour/venice-super-saver-skip-the-line-doge-s-palace-and-st-mark-s-basilica-in-venice-154634.jpg" alt="abc" class="img-responsive" />
+        </a>
+    </div>
+    <div class="col-md-8">
+        <div class="tour-item">
+            <a href="@Url.Action("Index", "Detail", new { tourId = @Model.TourId, tourName = @Model.TieuDe.ToSeoUrl() })">@Model.TieuDe</a>
+            <div class="col-xs-12 stars">
+                <div class="danhgia-ct shadow-outside" property="aggregateRating" typeof="AggregateRating">
+                    <input class="rating form-control hide" value="4" data-min="0" data-max="5" data-step="0.1" data-display-only="true">
+                    <a href="@Url.Action("Index","Detail")">@Model.LuotXem</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 txt-left">
+            <p class="text-justify">@Model.MoTa </p>
+            <div>Location: @Model.ProvinceName, @Model.NationalName</div>
+            <div>Note: @Model.GhiChu</div>
+            <br />
+        </div>
+        <div class="col-md-4 text-right">
+            <div>From USD</div>
+            <div class="badge">$ @Model.Gia</div>
+            <a href="@Url.Action("Index", "Detail", new { tourId = @Model.TourId, tourName = @Model.TieuDe.ToSeoUrl()})" class="btn btn-danger btn-detail"> See Detail &rarr;</a>
+        </div>
+    </div>
+</div>
+

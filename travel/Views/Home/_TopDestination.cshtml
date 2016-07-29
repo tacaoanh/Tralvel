@@ -1,0 +1,11 @@
+﻿
+@using travel.ViewModels;
+@using travel.Common;
+
+@model IEnumerable<travel.ViewModels.TopDestinationViewModel>
+@foreach (var item in Model)
+{
+    <li class="list-group-item">
+        <a href="@Url.Action("TourTinh", "Tour", new { name = item.Name.ToSeoUrl(), id = item.Id })"><span class="glyphicon glyphicon-time"></span>  @item.Name <span class="badge">@item.Number</span></a>
+    </li>
+}

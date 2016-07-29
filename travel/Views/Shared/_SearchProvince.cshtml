@@ -1,0 +1,25 @@
+﻿@using travel.Common;
+@{
+    var provinceName = Utilities.GetProvinceNameById(Setting.ProvinceId);
+}
+
+@using (Html.BeginForm("Index", "SearchTour", FormMethod.Get, new { @class = "form-group", @id = "form2" }))
+{
+    <div class="input-group">
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@provinceName <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li class="@(Setting.ProvinceId == 0 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("- Chọn tỉnh -", "ChonTinh", "Home", new { provinceId = 0 }, new { role = "menuitem" })</li>
+                <li class="@(Setting.ProvinceId == 1 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("Hà Nội", "ChonTinh", "Home", new { provinceId = 1 }, new { role = "menuitem" })</li>
+                <li class="@(Setting.ProvinceId == 2 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("TP. HCM", "ChonTinh", "Home", new { provinceId = 2 }, new { role = "menuitem" })</li>
+                <li class="@(Setting.ProvinceId == 3 ? "selected" : string.Empty)" role="presentation">@Html.ActionLink("Nam Định", "ChonTinh", "Home", new { provinceId = 3 }, new { role = "menuitem" })</li>
+
+
+            </ul>
+        </div>
+        <input name="textSearch" type="text" class="form-control" placeholder="Enter Text...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Tìm Kiếm</button>
+        </span>
+    </div>  
+} 

@@ -1,0 +1,22 @@
+﻿@using travel.Common;
+@model IEnumerable<travel.ViewModels.AnhViewModel>
+           
+
+        @if (Model != null)
+        {
+            <div id="travel-slidebar" class="owl-carousel">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <a href="@item.Link" target="_blank" title="@item.Caption">
+                            <img class="img-responsive lazyOwl" src="@Url.Content("~/images/blank_600x600.png")" data-src="@Url.Content(item.AnhSrc)" alt="@Html.Raw(item.AltImg)">
+                        </a>                       
+                    </div>    
+                }                  
+            </div>
+        }
+
+
+              
+
+  
